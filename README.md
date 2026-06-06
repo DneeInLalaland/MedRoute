@@ -8,21 +8,22 @@
 
 To adhere to industry software engineering best practices, this repository is organized into standard directory structures:
 
-```text
-MedRoute-Project/
-├── src/                      # ซอร์สโค้ดหลักทั้งหมด (Core Source Code)
-│   ├── main.cpp              # Application entry point & menu loops
+MedRoute/
+├── src/                      # Core source code
+│   ├── main.cpp              # Application entry point & menu loop
 │   ├── doctor.h / .cpp       # Module 1: Doctor database & Min-Heap load balancing
-│   ├── station.h / .cpp      # Module 2: Station routing & FIFO queues
-│   ├── patient.h / .cpp      # Module 3: Patient registration, BST mapping & history linked lists
-│   └── routing.h / .cpp      # Module 4: Graph BFS cascading failure & Emergency priority queues
-├── data/                     # โฟลเดอร์จัดเก็บฐานข้อมูล (Data Layer)
-│   └── doctors.csv           # Initial master list of hospital doctors
-├── docs/                     # เอกสารประกอบโปรเจกต์ (Documentation & Guides)
-│   ├── MedRoute_DataStructure_Guide.md  # โพยสรุป Data Structure สำหรับตอบคำถามอาจารย์
-│   └── MedRoute_Slide_Outline.md        # โครงสร้างเนื้อหา Presentation Slides (10 นาที)
-└── README.md                 # คู่มือแนะนำโปรเจกต์ (Project Overview)
-```
+│   ├── station.h / .cpp      # Module 2: Station routing & FIFO waiting queues
+│   ├── patient.h / .cpp      # Module 3: Patient registration, BST mapping & history linked list
+│   └── routing.h / .cpp      # Module 4: Graph BFS cascading failover & emergency priority queue
+├── data/                     # Data layer
+│   └── doctors.csv           # Master list of hospital doctors (loaded at startup)
+├── docs/                     # Documentation
+│   ├── MedRoute_by_dnee2.pdf       # Full design document
+│   └── test_case_medroute.pdf      # Test report (T01–T10 with sample output)
+├── tests/                    # Test inputs
+│   └── test_t07.txt          # Stress-test input for the graceful-degradation case
+├── .gitignore
+└── README.md                 # Project overview (this file)
 
 ---
 
@@ -53,6 +54,16 @@ Execute the compiled binary from the root directory so it correctly locates `dat
 - **Singly Linked List**: Dynamically appends patient event histories without arbitrary storage caps.
 - **Stacks (`stack`)**: $O(1)$ LIFO operation used to track visited stations and preserve pre-emergency baseline configurations during critical interventions.
 - **Graph BFS**: Discovers neighboring backup departments through iterative graph traversal to gracefully resolve departmental full-capacity blockades.
+
+---
+
+## ⚠️ Known Limitations & Future Improvements
+
+Known trade-offs and planned improvements are tracked in the https://github.com/DneeInLalaland/MedRoute/issues tab:
+
+- **Cascading failover graph excludes Obstetrics** — it is only reachable as a primary department, never as a BFS backup when others are full.
+- **Doctor selection is O(n·log n), not O(log n)** — `findAvailableDoctor()` rebuilds its priority queue on every call instead of maintaining a persistent heap.
+- **No explicit memory teardown on exit** — allocated objects are reclaimed by the OS instead of being freed via the existing `clearAll*()` routines.
 
 ---
 *Developed with ❤️ for Advanced C++ Data Structures Engineering.*
