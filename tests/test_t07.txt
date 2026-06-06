@@ -1,0 +1,91 @@
+ls -la test_t07.txt
+1
+Patient1
+general fever
+1
+1
+Patient2
+general fever
+1
+1
+Patient3
+general fever
+1
+1
+Patient4
+general fever
+1
+1
+Patient5
+general fever
+1
+1
+Patient6
+general fever
+1
+1
+Patient7
+general fever
+1
+1
+Patient8
+general fever
+1
+1
+Patient9
+general fever
+1
+1
+Patient10
+general fever
+1
+1
+Patient11
+general fever
+1
+1
+Patient12
+general fever
+1
+1
+Patient13
+general fever
+1
+1
+Patient14
+general fever
+1
+1
+Patient15
+general fever
+1
+1
+Patient16
+general fever
+1
+1
+Patient17
+general fever
+1
+1
+Patient18
+general fever
+1
+1
+Patient19
+general fever
+1
+1
+Patient20
+general fever
+1
+1
+Patient21
+general fever
+1
+1
+Patient22
+general fever
+1
+2
+0
