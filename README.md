@@ -8,22 +8,23 @@
 
 To adhere to industry software engineering best practices, this repository is organized into standard directory structures:
 
+```
 MedRoute/
-├── src/                      # Core source code
-│   ├── main.cpp              # Application entry point & menu loop
-│   ├── doctor.h / .cpp       # Module 1: Doctor database & Min-Heap load balancing
-│   ├── station.h / .cpp      # Module 2: Station routing & FIFO waiting queues
-│   ├── patient.h / .cpp      # Module 3: Patient registration, BST mapping & history linked list
-│   └── routing.h / .cpp      # Module 4: Graph BFS cascading failover & emergency priority queue
-├── data/                     # Data layer
-│   └── doctors.csv           # Master list of hospital doctors (loaded at startup)
-├── docs/                     # Documentation
-│   ├── MedRoute_by_dnee2.pdf       # Full design document
-│   └── test_case_medroute.pdf      # Test report (T01–T10 with sample output)
-├── tests/                    # Test inputs
-│   └── test_t07.txt          # Stress-test input for the graceful-degradation case
+├── src/                          # Core source code
+│   ├── main.cpp                  # Application entry point & menu loop
+│   ├── doctor.h / .cpp           # Module 1: Doctor database & Min-Heap load balancing
+│   ├── station.h / .cpp          # Module 2: Station routing & FIFO waiting queues
+│   ├── patient.h / .cpp          # Module 3: Patient registration, BST mapping & history linked list
+│   └── routing.h / .cpp          # Module 4: Graph BFS cascading failover & emergency priority queue
+├── data/                         # Data layer
+│   └── doctors.csv               # Master list of hospital doctors (loaded at startup)
+├── docs/                         # Documentation
+│   ├── MedRoute_by_dnee2.pdf     # Full design document
+│   └── test_case_medroute.pdf    # Test report (T01–T10 with sample output)
+├── tests/                        # Test inputs
+│   └── test_t07.txt              # Stress-test input for the graceful-degradation case
 ├── .gitignore
-└── README.md                 # Project overview (this file)
+└── README.md                     # Project overview (this file)
 
 ---
 
