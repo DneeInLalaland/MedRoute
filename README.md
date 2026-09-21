@@ -8,7 +8,7 @@
 
 ![MedRoute system design map](docs/design-map.png)
 
-Full design document: [docs/MedRoute_by_dnee2.pdf](docs/MedRoute_by_dnee2.pdf) · Test report (T01–T10): [docs/test_case_medroute.pdf](docs/test_case_medroute.pdf)
+Full design document: [MedRoute design document](docs/MedRoute%20by%20dnee2.pdf) · Test report (T01–T10): [test report](docs/test%20case%20medroute.pdf)
 
 ---
 
